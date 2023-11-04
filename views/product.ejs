@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include("./includes/nav.ejs") %>
+    <h2>Products</h2>
+    <div>
+      <% if(product.length===0){ %>
+      <div>No product found</div>
+      <% } %>
+    <% else { %> 
+        <% for (let pros of product){ %>
+      <div><%- pros.title %></div>
+      <div> <%- pros.price%> </div>
+      <img src="<%- pros.image  %>" alt="" />
+      <% } %>
+       <% } %>
+    </div>
+  </body>
+</html>
